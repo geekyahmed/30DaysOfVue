@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="vue.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <div id="app2">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Hello From Vue'
+            },
+            beforeCreate: function () {
+                console.log('beforeCreate() is called')
+            },
+
+            beforeMount: function () {
+                console.log('beforeMount() is called')
+            },
+            mounted: function () {
+                console.log('mounted() is called')
+            },
+            created: function () {
+                console.log('created() is called')
+            },
+        })
+
+        new Vue({
+            el: '#app2',
+            data: {
+                title: "Cool"
+            }
+        })
+    </script>
+</body>
+
+</html>
